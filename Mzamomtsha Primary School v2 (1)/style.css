@@ -1,0 +1,109 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+/*.navcolor{
+    color: #968e18;
+}*/
+
+main{
+    background-color: #1b3959;
+    text-align: center;
+    color:white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 100%;
+}
+
+h1{
+    color: #968e18;
+    text-align: center;
+}
+
+h3{
+    color: #968e18;
+    text-align: center;
+}
+
+a{
+    color: white;
+}
+
+a:is(:link, :active, :visited).active{
+    color: white;
+    background-color: #968e18;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #eff4fa;
+}
+.thankYouCard{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #eff4fa;
+    color:#968e18;
+}
+
+label{
+    color: #1b3959;
+}
+
+.answer{
+    color:#968e18;
+}
+
+text{
+    color: #1b3959;
+    text-align: center;
+}
+.text{
+    color:#1b3959;
+    text-align: center;
+}
+.logo-foot{
+    text-align: center;
+}
+
+footer{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: absolute;
+}
+
+.form-group.col-auto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*.for the Validation */
+
+.form-check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/*.for the disablity Validation */
+.form-check-inline {
+    margin-right: 20px;
+}
+
+
+
+
+
+  
+
+

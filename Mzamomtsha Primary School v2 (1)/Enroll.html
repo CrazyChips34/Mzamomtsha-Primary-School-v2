@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mzamomtsha Primary School | Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styling for the popup */
+   .popup {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color:#fff(0, 0, 0, 0.5);
+        z-index: 9999;
+      }
+    
+      .popup-content {
+        background-color: #fff;
+        width: 400px; /* Increase the width as desired */
+        height: 250px; /* Increase the height as desired */
+        padding: 20px;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid #968e18;
+        border-radius: 8px;
+      }
+       /* Styling of the button */
+      .close-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        color: #968e18;  /*The color of the button */
+        background-color: #FFFFFF;
+        margin-top: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 40px;
+        border-radius: 4px;
+        border: none; /* This show the font inside the popup */
+        font-family: Arial, sans-serif;
+      }
+  </style>
+</head>
+<body>
+
+<!--Nav Bar Starts-->
+   <header>        
+    <nav class="navbar navbar-expand-lg">    
+           <div class="container-fluid"  >
+      <!--Logo for the pages-->
+      <div class="logo-foot">
+         <img src="images/badge.png"  alt="logo"  width="210px" height="160x">
+     </div>
+         <a class="navbar-brand"><h3>Mzamomtsha Primary School</h3> </a>         
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+     
+            <!--Navbar links to the different pages-->
+            <div class="collapse navbar-collapse" id="navbarsExample05"> 
+             <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
+                 <li class="nav-item">        
+                     <a class="nav-link"  href="Home.html"><h5>Home</h5></a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link"  href="About Us.html"><h5>About Us</h5></a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link"  href="Events.html"><h5>Events</h5></a>
+                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="FAQ.html"><h5>FAQ</h5></a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Get In Touch</a>
+                  <ul class="dropdown-menu">           <!--This code allows you too open the web page in a new window-->  <!--target="openWindow"-->
+                    <li><a class="dropdown-item" href="Contact Us.html" target="openWindow">Contact Us</a></li>
+                    <li><a class="dropdown-item" href="Enroll.html" target="openWindow">Enroll with Us</a></li>
+                    <li><a class="dropdown-item" href="Apply.html" target="openWindow">Apply for a Job</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"  href="Games.html"><h5>Games</h5></a>
+              </li>
+             </ul>
+             </div>
+     </nav>
+     </header>
+     <!--Nav Bar Ends-->
+
+<!--Main Content Starts-->
+<!--form contact us-->
+<div>
+    <main>
+        <div class="col-lg-6 col-md-12 mb-4 container d-flex justify-content-center">
+        <section>
+            <form id="enrollmentForm" action="enroll_submit.php"method="POST" class="d-flex">
+              <br>
+                <h3>Registration Form </h3>
+                <br>
+                <div class="row">
+                  <div class="form-group col-6">
+                  <label for="inputName">First Name:</label>
+                  <input type="text" name="firstName" class="form-control" id="inputName" required oninput="validateName(this)">
+              </div>
+              <br>
+                  <div class="form-group col-6">
+                  <label for="inputSurname">Last Name:</label>
+                  <input type="text" name="lastName" class="form-control" id="inputSurname" required oninput="validateName(this)">
+                  </div>
+              </div>
+                <br>
+               <!---->  <!--Its in the same line-->
+               <div class="row">
+                <div class="form-group col-6">
+                  <label for="inputGrade">Grade:</label>                                <!--Add this new part of the html-->
+                  <input type="text" name="grade" class="form-control" id="inputGrade" required oninput="validateGrade(this)"> 
+                </div>
+                <div class="form-group col-6">
+                  <label for="selectGender">Gender:</label>
+                  <select id="selectGender" class="form-control" required>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="PreferNotToSay">Prefer Not to Say</option>
+                  </select>
+              </div>
+          </div>
+                <br>
+                <div class="form-group col-auto">
+                  <label for="inputDisability">Disability:</label><br>
+                  <div class="form-check">
+                      <div class="form-check-inline">
+                          <input class="form-check-input" type="radio" name="disabilityOption" id="disabilityYes" value="Yes" required onclick="showDisabilityDetails()">
+                          <label class="form-check-label" for="disabilityYes">
+                              Yes
+                          </label>
+                      </div>
+                      &nbsp;&nbsp;&nbsp; <!-- Add spaces between the options -->
+                      <div class="form-check-inline">
+                          <input class="form-check-input" type="radio" name="disabilityOption" id="disabilityNo" value="No" required onclick="showDisabilityDetails()">
+                          <label class="form-check-label" for="disabilityNo">
+                              No
+                          </label>
+                      </div>
+                  </div>
+                  <div id="disabilityDetails"></div>
+              </div>
+            <br>
+                <div class="form-group col-auto">
+                  <label for="inputdateofbith">Date of Birth:</label>
+                  <input type="date" name="dateOfBirth" class="form-control" id="inputDateOfBith" required>
+              </div>
+              <br>
+              <div class="form-group col-auto">
+                  <label for="inputNameofparents"> Name of Guardian:</label>
+                  <input type="text" name="nameOfParents"class="form-control" id="inputNameofparents" required>
+              </div>
+              <br>
+                <div class="form-group col-auto">
+                    <label for="inputSuburb/Town">Suburb/Town:</label>
+                    <input type="text" name="suburbTown" class="form-control" id="inputSuburbTown" required>
+                </div>
+                <br>
+                <div class="form-group col-auto">
+                    <label for="inputNum">Contact Number:</label>
+                    <input type="text" name="contactNum" class="form-control" id="inputNum" required pattern="[0-9]{10}">
+                </div>
+                <br>
+                <div class="form-group col-auto">
+                    <label for="inputNameofparents">Address:</label>
+                    <input type="text" name="address" class="form-control" id="inputAddress" required>
+                </div>
+                <br>
+                <button type="submit" class="btn mb-4 col-auto" style="background-color: #968e18;">Submit</button>
+      </form>
+    </section>
+</div>
+</main>
+<!--New Popup..Which will work, once all the details have been submitted-->         
+  <!-- Contact Form Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3>Thank you!</h3>
+      <p>Your form has been submitted.</p>
+      <div style="text-align: center;">    <!--Image Popup-->    <!--Styled as well-->
+        <img src="images/checkmark.png" alt="Popup Image" style="max-width: 20%; height: auto;">
+      </div>                      <!--The code for the button-->
+      <button class="close-button" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+<!----->
+
+<!--Footer Starts-->
+<div class="container">
+<footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+<!--Logo with Name and Copyright-->
+    <div class="col mb-3 logo-foot">
+       <img src="images/badge.png"  alt="logo"  width="210px" height="160x">
+        <h3>Mzamomtsha Primary School</h3><br>
+        <h6 style="color:gray;"> &copy COPYRIGHT - CODE SLAYERS</h6>
+        </div>
+        <div class="col mb-3">
+                
+        </div>
+<!--Page Links-->
+    <div class="col mb-3">
+    <ul class="nav flex-column">
+    <li class="nav-item mb-2"><a href="Home.html" class="nav-link p-0 text-body-secondary navcolor">Home</a></li>
+    <li class="nav-item mb-2"><a href="About Us.html" class="nav-link p-0 text-body-secondary navcolor">About us</a></li>
+    <li class="nav-item mb-2"><a href="Events.html" class="nav-link p-0 text-body-secondary navcolor">Events</a></li>
+    <li class="nav-item mb-2"><a href="Contact Us.html" class="nav-link p-0 text-body-secondary navcolor">Contact Us</a></li>
+    <li class="nav-item mb-2"><a href="FAQ.html" class="nav-link p-0 text-body-secondary navcolor">FAQ</a></li>
+    </ul>
+    </div>
+  <!--Address Information-->
+    <div class="col mb-3">
+    <ul class="nav flex-column">
+    <li class="nav-item mb-2">Address:<br> </li>
+    <li class="nav-item mb-2">Visit us at:<br></li>
+    <li class="nav-item mb-2">49 Valangentambo Street <br></li>
+    <li class="nav-item mb-2">Driftsands, Eersterivier<br></li>
+    <li class="nav-item mb-2">South Africa<br></li>
+    </ul>
+    </div>
+  <!--Contact Infomration-->
+    <div class="col mb-3">
+    <ul class="nav flex-column">
+    <li class="nav-item mb-2">Contact Number: (+27)219010008<br></li>
+    <li class="nav-item mb-2">Email: mzamomtshaps@gmail.com<br></li>
+  <li class="nav-item mb-2">Post Office Box Address:Po Box 40034,Elonwabeni, City Of Cape Town, 7100</li><br> 
+  </ul>
+  </div>
+  </footer>
+  </div>
+<!--Footer Ends-->
+
+<!--JavaScript links-->
+<script src="script.js">
+        isValidName();
+        isValidSurame();
+        isValidEmail();
+        isValidPhone();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script> 
+<script>
+// JavaScript code for the contact form
+// Get the popup and button elements
+function closePopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+  }
+//Gets the information from the Contact form:\\ 
+  document.getElementById("enrollmentForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+// Show the popup
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+// Reset the form
+    document.getElementById("enrollmentForm").reset();
+  });
+//Ends the popup:
+</script>
+</body>
+</html>
+
+
